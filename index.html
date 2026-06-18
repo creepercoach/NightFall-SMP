@@ -10,6 +10,21 @@
 </head>
 <body>
 
+<div id="overlay" onclick="startMusic()">
+  Click anywhere to enter
+</div>
+
+<audio id="bg-music" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function startMusic() {
+  document.getElementById("bg-music").play();
+  document.getElementById("overlay").style.display = "none";
+}
+</script>
+
 <div class="container">
 
 <h1>NightFall SMP</h1>
