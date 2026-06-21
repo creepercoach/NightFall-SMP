@@ -1,0 +1,186 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favicon.png">
+<title>NightFall SMP</title>
+
+<link rel="stylesheet" href="style.css?v=4">
+
+</head>
+<body>
+
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader-mark">NF</div>
+  <div class="loader-bar"></div>
+</div>
+
+<div class="night-particles" aria-hidden="true">
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+<audio id="bg-music" loop>
+  <source src="Rival.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music-button" onclick="document.getElementById('bg-music').play()">
+  Play Music
+</button>
+
+<nav class="site-nav">
+  <a href="index.html" class="nav-brand">NightFall</a>
+  <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false" onclick="toggleNav(this)">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <div class="nav-links" id="nav-links">
+    <a href="index.html">Home</a>
+    <a href="rules.html">Rules</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="#join">Join</a>
+    <a href="#discord">Discord</a>
+    <a href="#info">Info</a>
+  </div>
+</nav>
+
+<div class="container">
+
+<h1>NightFall SMP</h1>
+<p class="subtitle">
+Lifesteal &bull; Custom Enchants &bull; Events &bull; Survival
+</p>
+
+<div class="join-card" id="join">
+  <div class="join-content">
+    <p class="eyebrow">Ready to play?</p>
+    <h2>Join NightFall SMP</h2>
+    <p>Pick your platform, copy the IP, and jump into survival, lifesteal, custom enchants, and events.</p>
+  </div>
+
+  <div class="join-actions">
+    <div class="ip-box">
+      <span class="ip-label">Java / Cracked</span>
+      <code>nightfallsmpxyz.falix.gg</code>
+      <button class="copy-button" onclick="copyIP('nightfallsmpxyz.falix.gg', this)">Copy IP</button>
+    </div>
+
+    <div class="ip-box">
+      <span class="ip-label">Bedrock</span>
+      <code>88.209.197.232:26007</code>
+      <button class="copy-button" onclick="copyIP('88.209.197.232:26007', this)">Copy IP</button>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+
+<a href="https://falixnodes.net/minecraft-servers/nightfall-smp">
+<img src="https://falixnodes.net/discover/media/nightfall-smp/banner-card.png"
+alt="NightFall SMP Banner">
+</a>
+
+</div>
+
+<div class="card">
+
+<h2>Server Rules</h2>
+
+<p>View the complete NightFall SMP rules before playing.</p>
+
+<a href="rules.html" class="button">View Rules</a>
+
+</div>
+
+<div class="card">
+
+<h2>About the Server</h2>
+
+<p>
+Welcome to nightfall smp, a unique survival experience featuring
+lifesteal, custom enchants, an active community, and exciting events.
+fight, build, raid, and become the strongest player on the server.
+</p>
+
+</div>
+
+<div class="card" id="discord">
+
+<h2>Discord Server</h2>
+
+<iframe
+src="https://discord.com/widget?id=1506806277848825947&theme=dark"
+width="350"
+height="500"
+allowtransparency="true"
+frameborder="0"
+sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts">
+</iframe>
+
+</div>
+
+<div class="card info" id="info">
+
+<h2>Server Information</h2>
+
+<p><strong>Server name:</strong> NightFall SMP</p>
+<p><strong>Version:</strong> 26.2.x</p>
+<p><strong>Gamemode:</strong> Survival</p>
+<p><strong>Features:</strong> Lifesteal, Custom Enchants, Economy, Events</p>
+<div class="info-ip-row">
+  <p><strong>Java/Cracked:</strong> nightfallsmpxyz.falix.gg OR nightfallsmp.falix.pro</p>
+  <button class="copy-button small" onclick="copyIP('nightfallsmpxyz.falix.gg', this)">Copy</button>
+</div>
+<div class="info-ip-row">
+  <p><strong>Bedrock:</strong> 88.209.197.232 Port: 26007</p>
+  <button class="copy-button small" onclick="copyIP('88.209.197.232:26007', this)">Copy</button>
+</div>
+</div>
+
+<div class="footer">
+&copy; 2026 NightFall SMP
+</div>
+
+</div>
+
+<script>
+window.addEventListener("load", function () {
+    var loader = document.getElementById("loader");
+    if (loader) {
+        loader.classList.add("loaded");
+    }
+});
+
+function toggleNav(button) {
+    var navLinks = document.getElementById("nav-links");
+    var isOpen = navLinks.classList.toggle("open");
+    button.classList.toggle("open", isOpen);
+    button.setAttribute("aria-expanded", isOpen);
+}
+
+function copyIP(ip, button) {
+    navigator.clipboard.writeText(ip).then(function () {
+        var originalText = button.textContent;
+        button.textContent = "Copied!";
+        button.classList.add("copied");
+
+        setTimeout(function () {
+            button.textContent = originalText;
+            button.classList.remove("copied");
+        }, 1600);
+    });
+}
+</script>
+
+</body>
+</html>
