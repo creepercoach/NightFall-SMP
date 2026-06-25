@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <title>NightFall SMP Staff</title>
+    <meta name="description" content="Meet the NightFall SMP staff team.">
+    <meta name="theme-color" content="#0b4dff">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="NightFall SMP">
+    <meta property="og:title" content="NightFall SMP Staff">
+    <meta property="og:description" content="Meet the staff helping keep NightFall SMP active, fair, and fun.">
+    <meta property="og:url" content="https://nightfall-smp.github.io/NFSMP/staff.html">
+    <meta property="og:image" content="https://nightfall-smp.github.io/NFSMP/gallery/snowy-spawn-wide.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="NightFall SMP Staff">
+    <meta name="twitter:description" content="Meet the staff helping keep NightFall SMP active, fair, and fun.">
+    <meta name="twitter:image" content="https://nightfall-smp.github.io/NFSMP/gallery/snowy-spawn-wide.png">
+    <link rel="stylesheet" href="style.css?v=15">
+</head>
+<body>
+
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader-mark">NF</div>
+  <div class="loader-bar"></div>
+</div>
+
+<div class="night-particles" aria-hidden="true">
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+<nav class="site-nav">
+  <a href="index.html" class="nav-brand">NightFall</a>
+  <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false" onclick="toggleNav(this)">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <div class="nav-links" id="nav-links">
+    <a href="index.html">Home</a>
+    <a href="rules.html">Rules</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="staff.html">Staff</a>
+    <a href="index.html#join">Join</a>
+    <a href="index.html#discord">Discord</a>
+    <a href="index.html#faq">FAQ</a>
+    <a href="index.html#info">Info</a>
+  </div>
+  <button class="theme-toggle" type="button" onclick="toggleTheme(this)" aria-label="Switch to light theme">Light mode</button>
+</nav>
+
+<div class="container">
+
+<h1>Staff</h1>
+
+<div class="staff-hero">
+    <p class="eyebrow">NightFall SMP</p>
+    <h2>Meet the Staff</h2>
+    <p>The people helping keep NightFall SMP active, fair, and fun.</p>
+</div>
+
+<div class="staff-grid" id="staff-grid"></div>
+
+<a href="index.html" class="button">Back to Home</a>
+
+</div>
+
+<script>
+window.addEventListener("load", function () {
+    var loader = document.getElementById("loader");
+    if (loader) {
+        loader.classList.add("loaded");
+    }
+});
+
+var staffMembers = [
+    {
+        name: "creepercoach",
+        role: "Owner",
+        uuid: "fc4127ff-9123-4027-9355-78eea9be346a",
+        discordId: "1439751819508191394",
+        avatar: "https://cdn.discordapp.com/avatars/1439751819508191394/d3fa741e21ebaacb9b5800c3f29703bf.webp?size=1024",
+        banner: "https://cdn.discordapp.com/banners/1439751819508191394/6cf6c98005da130bba7603c7f46764c6.png?size=1024"
+    },
+    {
+        name: "trickster3121",
+        role: "Developer",
+        uuid: "4aaf69f3-0829-496f-936b-9505e3539d3f",
+        discordId: "1041228517939097620",
+        avatar: "https://cdn.discordapp.com/avatars/1041228517939097620/22b20e80e7e13f6ed7ebace667c56f52.webp?size=1024"
+    },
+    {
+        name: "crystaldragon",
+        role: "Developer",
+        uuid: "ce3a4dba-5872-43b8-9927-57354e63a0aa",
+        discordId: "1500129789330198669",
+        avatar: "https://cdn.discordapp.com/avatars/1500129789330198669/fa893dba573dd6a80c3c7f5448deb4e2.webp?size=1024"
+    },
+    {
+        name: "YiyangTheKid2013",
+        role: "Moderator",
+        uuid: "",
+        discordId: "1498848752897888316",
+        avatar: "https://cdn.discordapp.com/avatars/1498848752897888316/cc8a19e2d9338a045d67386efff238c3.webp?size=1024"
+    },
+    {
+        name: "Ace",
+        role: "Moderator",
+        uuid: "",
+        discordId: "1382438608677634102",
+        avatar: "https://cdn.discordapp.com/avatars/1382438608677634102/c45e99e3b2b27e6f6e548bbb8898a5cc.webp?size=1024"
+    }
+];
+
+function buildStaffCards() {
+    var staffGrid = document.getElementById("staff-grid");
+
+    staffMembers.forEach(function (member) {
+        var card = document.createElement("article");
+        card.className = "staff-card";
+
+        if (member.banner) {
+            var bannerWrap = document.createElement("div");
+            bannerWrap.className = "staff-banner-wrap";
+
+            var banner = document.createElement("img");
+            banner.className = "staff-banner";
+            banner.src = member.banner;
+            banner.alt = member.name + " Discord banner";
+            banner.loading = "lazy";
+
+            var bannerText = document.createElement("div");
+            bannerText.className = "staff-banner-text";
+
+            var bannerName = document.createElement("h2");
+            bannerName.textContent = member.name;
+
+            var bannerRole = document.createElement("p");
+            bannerRole.textContent = member.role;
+
+            bannerText.appendChild(bannerName);
+            bannerText.appendChild(bannerRole);
+            bannerWrap.appendChild(banner);
+            bannerWrap.appendChild(bannerText);
+            card.appendChild(bannerWrap);
+        }
+
+        var heading = document.createElement("div");
+        heading.className = "staff-card-heading";
+
+        var name = document.createElement("h2");
+        name.textContent = member.name;
+
+        var role = document.createElement("p");
+        role.textContent = member.role;
+
+        heading.appendChild(name);
+        heading.appendChild(role);
+        if (!member.banner) {
+            card.appendChild(heading);
+        }
+
+        if (member.uuid) {
+            var iframe = document.createElement("iframe");
+            iframe.title = member.name + " Minecraft skin";
+            iframe.src = "https://laby.net/embed#uuid=" + member.uuid + "&no_buttons&rotate&zoom&pan";
+            iframe.width = "300";
+            iframe.height = "400";
+            iframe.frameBorder = "0";
+            iframe.allowTransparency = "true";
+            iframe.loading = "lazy";
+            card.appendChild(iframe);
+        } else {
+            var placeholder = document.createElement("div");
+            placeholder.className = "staff-placeholder";
+            placeholder.innerHTML = "<span>NF</span><p>Minecraft embed coming soon</p>";
+            card.appendChild(placeholder);
+        }
+
+        var discord = document.createElement("div");
+        discord.className = "staff-discord";
+
+        var discordLabel = document.createElement("span");
+        discordLabel.textContent = "Discord";
+
+        var discordValue = document.createElement("a");
+        discordValue.href = "https://discord.com/users/" + member.discordId;
+        discordValue.target = "_blank";
+        discordValue.rel = "noopener";
+
+        var discordAvatar = document.createElement("img");
+        discordAvatar.src = member.avatar;
+        discordAvatar.alt = member.name + " Discord avatar";
+        discordAvatar.loading = "lazy";
+
+        var discordText = document.createElement("span");
+        discordText.textContent = "View Discord Profile";
+
+        discordValue.appendChild(discordAvatar);
+        discordValue.appendChild(discordText);
+
+        discord.appendChild(discordLabel);
+        discord.appendChild(discordValue);
+        card.appendChild(discord);
+        staffGrid.appendChild(card);
+    });
+}
+
+function toggleNav(button) {
+    var navLinks = document.getElementById("nav-links");
+    var isOpen = navLinks.classList.toggle("open");
+    button.classList.toggle("open", isOpen);
+    button.setAttribute("aria-expanded", isOpen);
+}
+
+function applyTheme(theme) {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("nightfall-theme", theme);
+
+    document.querySelectorAll(".theme-toggle").forEach(function (button) {
+        var isLight = theme === "light";
+        button.textContent = isLight ? "Dark mode" : "Light mode";
+        button.setAttribute("aria-label", isLight ? "Switch to dark theme" : "Switch to light theme");
+    });
+}
+
+function toggleTheme() {
+    var currentTheme = document.documentElement.getAttribute("data-theme") || "dark";
+    applyTheme(currentTheme === "dark" ? "light" : "dark");
+}
+
+applyTheme(localStorage.getItem("nightfall-theme") || "dark");
+buildStaffCards();
+</script>
+
+</body>
+</html>

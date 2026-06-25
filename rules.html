@@ -1,0 +1,162 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <title>NightFall SMP Rules</title>
+    <meta name="description" content="Read the NightFall SMP rules before joining the survival, lifesteal, custom enchants, and events server.">
+    <meta name="theme-color" content="#0b4dff">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="NightFall SMP">
+    <meta property="og:title" content="NightFall SMP Rules">
+    <meta property="og:description" content="Read the rules before joining NightFall SMP.">
+    <meta property="og:url" content="https://nightfall-smp.github.io/NFSMP/rules.html">
+    <meta property="og:image" content="https://nightfall-smp.github.io/NFSMP/gallery/snowy-spawn-wide.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="NightFall SMP Rules">
+    <meta name="twitter:description" content="Read the rules before joining NightFall SMP.">
+    <meta name="twitter:image" content="https://nightfall-smp.github.io/NFSMP/gallery/snowy-spawn-wide.png">
+    <link rel="stylesheet" href="style.css?v=15">
+</head>
+<body>
+
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader-mark">NF</div>
+  <div class="loader-bar"></div>
+</div>
+
+<div class="night-particles" aria-hidden="true">
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+<nav class="site-nav">
+  <a href="index.html" class="nav-brand">NightFall</a>
+  <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false" onclick="toggleNav(this)">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <div class="nav-links" id="nav-links">
+    <a href="index.html">Home</a>
+    <a href="rules.html">Rules</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="staff.html">Staff</a>
+    <a href="index.html#join">Join</a>
+    <a href="index.html#discord">Discord</a>
+    <a href="index.html#faq">FAQ</a>
+    <a href="index.html#info">Info</a>
+  </div>
+  <button class="theme-toggle" type="button" onclick="toggleTheme(this)" aria-label="Switch to light theme">Light mode</button>
+</nav>
+
+<div class="container">
+
+<h1>Rules</h1>
+
+<div class="rules-hero">
+    <p class="eyebrow">NightFall SMP</p>
+    <h2>Server Rules</h2>
+    <p>Read these before jumping in so the server stays fair, active, and fun for everyone.</p>
+    <span>Last updated: 2026/6/16</span>
+</div>
+
+<div class="card rules-card">
+    <h2>In-Game Rules</h2>
+
+    <ol>
+        <li>Keep chat clean of spam, flooding, and toxicity.</li>
+
+        <li>
+            Do not use any disallowed modifications.
+            <ul>
+                <li>This includes macros and autoclickers.</li>
+                <li>
+                    <a href="https://docs.google.com/spreadsheets/d/11RT-EbB8ph5p_cn-HXd_ckoBx5m-3r64ulivF8Pyc8E" target="_blank">
+                        The Disallowed Mods list
+                    </a>
+                    is a starting point for determining disallowed modifications.
+                </li>
+                <li>Double-binding is considered a disallowed modification.</li>
+                <li>Using external programs (e.g. FilterKeys) to modify keyboard repeat delay / repeat rate is prohibited.</li>
+                <li>Any method to make mouse clicks bind to keyboard inputs is disallowed.</li>
+            </ul>
+        </li>
+
+        <li>
+            Do not advertise.
+            <ul>
+                <li>You are NOT allowed to promote your stream and immediately stream something other than NightFall SMP.</li>
+            </ul>
+        </li>
+
+        <li>
+            Do not threaten the safety of other players.
+            <ul>
+                <li>Doxing, threatening, or harassing any individuals is completely unacceptable.</li>
+            </ul>
+        </li>
+
+        <li>
+            Do not intentionally exploit or lower server performance.
+            <ul>
+                <li>Please report any exploits in a Senior Inquiry ticket.</li>
+            </ul>
+        </li>
+
+        <li>Do not impersonate staff or mislead players.</li>
+        <li>Do not use an inappropriate username or skin.</li>
+        <li>No X-Ray.</li>
+    </ol>
+
+</div>
+
+<a href="index.html" class="button">Back to Home</a>
+
+</div>
+
+<script>
+window.addEventListener("load", function () {
+    var loader = document.getElementById("loader");
+    if (loader) {
+        loader.classList.add("loaded");
+    }
+});
+
+function toggleNav(button) {
+    var navLinks = document.getElementById("nav-links");
+    var isOpen = navLinks.classList.toggle("open");
+    button.classList.toggle("open", isOpen);
+    button.setAttribute("aria-expanded", isOpen);
+}
+
+function applyTheme(theme) {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("nightfall-theme", theme);
+
+    document.querySelectorAll(".theme-toggle").forEach(function (button) {
+        var isLight = theme === "light";
+        button.textContent = isLight ? "Dark mode" : "Light mode";
+        button.setAttribute("aria-label", isLight ? "Switch to dark theme" : "Switch to light theme");
+    });
+}
+
+function toggleTheme() {
+    var currentTheme = document.documentElement.getAttribute("data-theme") || "dark";
+    applyTheme(currentTheme === "dark" ? "light" : "dark");
+}
+
+applyTheme(localStorage.getItem("nightfall-theme") || "dark");
+</script>
+
+</body>
+</html>
