@@ -1,0 +1,377 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favicon.png">
+<title>NightFall SMP</title>
+<meta name="description" content="Join NightFall SMP for lifesteal, custom enchants, events, survival, PvP, building, and raiding.">
+<meta name="theme-color" content="#0b4dff">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="NightFall SMP">
+<meta property="og:title" content="NightFall SMP">
+<meta property="og:description" content="Lifesteal, custom enchants, events, survival, PvP, building, and raiding.">
+<meta property="og:url" content="https://nightfall-smp.github.io/NFSMP/">
+<meta property="og:image" content="https://nightfall-smp.github.io/NFSMP/gallery/snowy-spawn-wide.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="NightFall SMP">
+<meta name="twitter:description" content="Lifesteal, custom enchants, events, survival, PvP, building, and raiding.">
+<meta name="twitter:image" content="https://nightfall-smp.github.io/NFSMP/gallery/snowy-spawn-wide.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NENJTHFPX1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-NENJTHFPX1');
+</script>
+
+<link rel="stylesheet" href="style.css?v=16">
+
+</head>
+<body>
+
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader-mark">NF</div>
+  <div class="loader-bar"></div>
+</div>
+
+<div class="night-particles" aria-hidden="true">
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+<div class="music-visualizer" id="music-visualizer" aria-hidden="true">
+  <span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span>
+</div>
+
+<audio id="bg-music" loop>
+  <source src="Rival.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music-button" id="music-button" onclick="toggleMusic()">
+  Play Music
+</button>
+
+<nav class="site-nav">
+  <a href="index.html" class="nav-brand">NightFall</a>
+  <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false" onclick="toggleNav(this)">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <div class="nav-links" id="nav-links">
+    <a href="index.html">Home</a>
+    <a href="rules.html">Rules</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="staff.html">Staff</a>
+    <a href="applications.html">Applications</a>
+    <a href="#join">Join</a>
+    <a href="#discord">Discord</a>
+    <a href="#faq">FAQ</a>
+    <a href="#info">Info</a>
+  </div>
+  <button class="theme-toggle" type="button" onclick="toggleTheme(this)" aria-label="Switch to light theme">Light mode</button>
+</nav>
+
+<div class="container">
+
+<h1>NightFall SMP</h1>
+<p class="subtitle">
+Lifesteal &bull; Custom Enchants &bull; Events &bull; Survival
+</p>
+
+<div class="join-card" id="join">
+  <div class="join-content">
+    <p class="eyebrow">Ready to play?</p>
+    <h2>Join NightFall SMP</h2>
+    <p>Pick your platform, copy the IP, and jump into survival, lifesteal, custom enchants, and events.</p>
+  </div>
+
+  <div class="join-actions">
+    <div class="ip-box">
+      <span class="ip-label">Java / Cracked</span>
+      <code>nightfallsmpxyz.falix.gg</code>
+      <button class="copy-button" onclick="copyIP('nightfallsmpxyz.falix.gg', this)">Copy IP</button>
+    </div>
+
+    <div class="ip-box">
+      <span class="ip-label">Bedrock</span>
+      <code>88.209.197.232:26007</code>
+      <button class="copy-button" onclick="copyIP('88.209.197.232:26007', this)">Copy IP</button>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+
+<a href="https://falixnodes.net/minecraft-servers/nightfall-smp">
+<img src="https://falixnodes.net/discover/media/nightfall-smp/banner-card.png"
+alt="NightFall SMP Banner">
+</a>
+
+</div>
+
+<div class="card">
+
+<h2>Server Rules</h2>
+
+<p>View the complete NightFall SMP rules before playing.</p>
+
+<a href="rules.html" class="button">View Rules</a>
+
+</div>
+
+<div class="card">
+
+<h2>About the Server</h2>
+
+<p>
+Welcome to nightfall smp, a unique survival experience featuring
+lifesteal, custom enchants, an active community, and exciting events.
+fight, build, raid, and become the strongest player on the server.
+</p>
+
+</div>
+
+<div class="card" id="discord">
+
+<h2>Discord Server</h2>
+
+<p>Join the community for announcements, events, support, and server updates.</p>
+
+<a href="https://discord.gg/7A5yrrVJGs" class="button discord-button" target="_blank" rel="noopener">Join Discord</a>
+
+<iframe
+id="discord-widget"
+src="https://discord.com/widget?id=1506806277848825947&theme=dark"
+width="350"
+height="500"
+allowtransparency="true"
+frameborder="0"
+sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts">
+</iframe>
+
+</div>
+
+<div class="card faq-section" id="faq">
+  <p class="eyebrow">Need to know</p>
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="faq-list">
+    <details>
+      <summary>Can I play on Java, cracked Java, or Bedrock?</summary>
+      <p>Yes. NightFall SMP supports Java, cracked Java, and Bedrock players.</p>
+    </details>
+
+    <details>
+      <summary>What IP do I use to join?</summary>
+      <p>Java and cracked players can use <code>nightfallsmpxyz.falix.gg</code>. Bedrock players can use <code>88.209.197.232</code> with port <code>26007</code>.</p>
+    </details>
+
+    <details>
+      <summary>What version does the server support?</summary>
+      <p>The server information currently lists version 26.2.x.</p>
+    </details>
+
+    <details>
+      <summary>What features does NightFall SMP have?</summary>
+      <p>The server includes survival, lifesteal, custom enchants, an economy, community events, PvP, building, and raiding.</p>
+    </details>
+
+    <details>
+      <summary>Are mods, macros, or autoclickers allowed?</summary>
+      <p>Disallowed modifications, macros, autoclickers, double-binding, X-Ray, and external programs that change keyboard repeat behavior are not allowed. Check the full rules before playing.</p>
+    </details>
+
+    <details>
+      <summary>Where should I report an exploit or get help?</summary>
+      <p>Join the Discord and report exploits through a Senior Inquiry ticket. Do not use an exploit or intentionally lower server performance.</p>
+    </details>
+  </div>
+</div>
+
+<div class="card info" id="info">
+
+<h2>Server Information</h2>
+
+<p><strong>Server name:</strong> NightFall SMP</p>
+<p><strong>Version:</strong> 26.2.x</p>
+<p><strong>Gamemode:</strong> Survival</p>
+<p><strong>Features:</strong> Lifesteal, Custom Enchants, Economy, Events</p>
+<div class="info-ip-row">
+  <p><strong>Java/Cracked:</strong> nightfallsmpxyz.falix.gg OR nightfallsmp.falix.pro</p>
+  <button class="copy-button small" onclick="copyIP('nightfallsmpxyz.falix.gg', this)">Copy</button>
+</div>
+<div class="info-ip-row">
+  <p><strong>Bedrock:</strong> 88.209.197.232 Port: 26007</p>
+  <button class="copy-button small" onclick="copyIP('88.209.197.232:26007', this)">Copy</button>
+</div>
+</div>
+
+<div class="footer">
+&copy; 2026 NightFall SMP
+</div>
+
+</div>
+
+<script>
+window.addEventListener("load", function () {
+    var loader = document.getElementById("loader");
+    if (loader) {
+        loader.classList.add("loaded");
+    }
+});
+
+function toggleNav(button) {
+    var navLinks = document.getElementById("nav-links");
+    var isOpen = navLinks.classList.toggle("open");
+    button.classList.toggle("open", isOpen);
+    button.setAttribute("aria-expanded", isOpen);
+}
+
+function toggleMusic() {
+    var music = document.getElementById("bg-music");
+    var button = document.getElementById("music-button");
+
+    if (music.paused) {
+        startMusicVisualizer();
+        music.play().then(function () {
+            button.textContent = "Pause Music";
+            document.body.classList.add("music-playing");
+        }).catch(function () {
+            button.textContent = "Play Music";
+        });
+    } else {
+        music.pause();
+        button.textContent = "Play Music";
+        document.body.classList.remove("music-playing");
+    }
+}
+
+document.getElementById("bg-music").addEventListener("play", function () {
+    document.body.classList.add("music-playing");
+    document.getElementById("music-button").textContent = "Pause Music";
+});
+
+document.getElementById("bg-music").addEventListener("pause", function () {
+    document.body.classList.remove("music-playing");
+    document.getElementById("music-button").textContent = "Play Music";
+});
+
+var audioContext;
+var audioAnalyser;
+var audioData;
+var visualizerStarted = false;
+
+function startMusicVisualizer() {
+    var music = document.getElementById("bg-music");
+    var AudioContextClass = window.AudioContext || window.webkitAudioContext;
+
+    if (!AudioContextClass) {
+        return;
+    }
+
+    if (!visualizerStarted) {
+        try {
+            audioContext = new AudioContextClass();
+            audioAnalyser = audioContext.createAnalyser();
+            audioAnalyser.fftSize = 128;
+            audioAnalyser.smoothingTimeConstant = 0.82;
+
+            var source = audioContext.createMediaElementSource(music);
+            source.connect(audioAnalyser);
+            audioAnalyser.connect(audioContext.destination);
+            audioData = new Uint8Array(audioAnalyser.frequencyBinCount);
+            visualizerStarted = true;
+            updateMusicVisualizer();
+        } catch (error) {
+            return;
+        }
+    }
+
+    if (audioContext.state === "suspended") {
+        audioContext.resume();
+    }
+}
+
+function updateMusicVisualizer() {
+    audioAnalyser.getByteFrequencyData(audioData);
+
+    var bassTotal = 0;
+    var volumeTotal = 0;
+    var bassBins = Math.min(10, audioData.length);
+
+    for (var i = 0; i < audioData.length; i++) {
+        volumeTotal += audioData[i];
+        if (i < bassBins) {
+            bassTotal += audioData[i];
+        }
+    }
+
+    var bass = Math.min(1, bassTotal / bassBins / 255 * 1.35);
+    var volume = Math.min(1, volumeTotal / audioData.length / 255 * 1.6);
+    var isPlaying = !document.getElementById("bg-music").paused;
+
+    document.documentElement.style.setProperty("--music-bass", isPlaying ? bass.toFixed(3) : "0");
+    document.documentElement.style.setProperty("--music-volume", isPlaying ? volume.toFixed(3) : "0");
+
+    var bars = document.querySelectorAll("#music-visualizer span");
+    bars.forEach(function (bar, index) {
+        var dataIndex = Math.min(audioData.length - 1, index * 2 + 1);
+        var rawLevel = isPlaying ? audioData[dataIndex] / 255 : 0;
+        var level = Math.pow(rawLevel, 1.45) * 0.82;
+        bar.style.setProperty("--bar-level", level.toFixed(3));
+    });
+
+    requestAnimationFrame(updateMusicVisualizer);
+}
+
+function applyTheme(theme) {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("nightfall-theme", theme);
+
+    document.querySelectorAll(".theme-toggle").forEach(function (button) {
+        var isLight = theme === "light";
+        button.textContent = isLight ? "Dark mode" : "Light mode";
+        button.setAttribute("aria-label", isLight ? "Switch to dark theme" : "Switch to light theme");
+    });
+
+    var widget = document.getElementById("discord-widget");
+    if (widget) {
+        widget.src = "https://discord.com/widget?id=1506806277848825947&theme=" + (theme === "light" ? "light" : "dark");
+    }
+}
+
+function toggleTheme() {
+    var currentTheme = document.documentElement.getAttribute("data-theme") || "dark";
+    applyTheme(currentTheme === "dark" ? "light" : "dark");
+}
+
+applyTheme(localStorage.getItem("nightfall-theme") || "dark");
+
+function copyIP(ip, button) {
+    navigator.clipboard.writeText(ip).then(function () {
+        var originalText = button.textContent;
+        button.textContent = "Copied!";
+        button.classList.add("copied");
+
+        setTimeout(function () {
+            button.textContent = originalText;
+            button.classList.remove("copied");
+        }, 1600);
+    });
+}
+</script>
+
+</body>
+</html>
